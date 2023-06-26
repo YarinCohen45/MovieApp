@@ -16,7 +16,7 @@ import {
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../config/firebase";
 
-const backImage = require("../assets/icon.png");
+const backImage = require("../assets/tecno.jpg");
 
 export default function Signup({ navigation }) {
   const [firstName, setFirstName] = useState("");
@@ -45,6 +45,7 @@ export default function Signup({ navigation }) {
         .catch((err) => alert("Error in Signup" + err.message));
     }
   };
+  
 
   return (
     
@@ -124,7 +125,7 @@ export default function Signup({ navigation }) {
             Already have account?
           </Text>
           <TouchableOpacity onPress={() => navigation.navigate("Login")}>
-            <Text style={{ color: "#f57c00", fontWeight: "600", fontSize: 14 }}>
+            <Text style={{ color: '#8EBBFF', fontWeight: "600", fontSize: 14 }}>
               {" "}
               Login
             </Text>
@@ -150,7 +151,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 36,
     fontWeight: "bold",
-    color: "orange",
+    color: '#8EBBFF',
     alignSelf: "center",
     paddingBottom: 24,
   },
@@ -183,7 +184,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 30,
   },
   button: {
-    backgroundColor: "#f57c00",
+    backgroundColor:'#8EBBFF',
     height: 58,
     borderRadius: 10,
     justifyContent: "center",

@@ -11,7 +11,7 @@ import {
 import {signInWithEmailAndPassword} from "firebase/auth";
 import {auth} from "../config/firebase";
 
-const backImage = require("../assets/icon.png");
+const backImage = require("../assets/tecno.jpg");
 
 export default function Login({navigation}) {
     const [email, setEmail] = useState("");
@@ -73,7 +73,7 @@ export default function Login({navigation}) {
                         Don't have an account?
                     </Text>
                     <TouchableOpacity onPress={() => navigation.navigate("Signup")}>
-                        <Text style={{color: "#f57c00", fontWeight: "600", fontSize: 14}}>
+                        <Text style={{color: '#8EBBFF', fontWeight: "600", fontSize: 14}}>
                             {" "}
                             Sign Up
                         </Text>
@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 36,
         fontWeight: "bold",
-        color: "orange",
+        color: '#8EBBFF',
         alignSelf: "center",
         paddingBottom: 24,
     },
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 30,
     },
     button: {
-        backgroundColor: "#f57c00",
+        backgroundColor: "#8EBBFF",
         height: 58,
         borderRadius: 10,
         justifyContent: "center",
