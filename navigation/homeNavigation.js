@@ -1,12 +1,12 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import MovieCardScreen from '../components/MovieCard';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import HomeScreen from "../screens/HomeScreen";
 
 const Tab = createBottomTabNavigator();
 
 function MyTabs() {
-  return (
-    <Tab.Navigator>
-      <Tab.Screen name="Home" component={MovieCardScreen} />
-    </Tab.Navigator>
-  );
+	return (
+		<Tab.Navigator>
+			<Tab.Screen name="Home" component={HomeScreen}/>
+		</Tab.Navigator>
+	);
 }

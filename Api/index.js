@@ -1,43 +1,47 @@
-const createUrl = (option, extra) => {
-    return `https://imdb-api.com/en/API/${option}/k_4awv47i7/${extra || ''}`;
-}
-
-export const fetchMoviesByTitle = async (title) => {
-    try {
-        const res = await fetch(createUrl('SearchMovie', title));
-        const data = await res.json();
-        return data.items;
-    } catch (error) {
-        console.log(error.response);
-    }
+const options = {
+	method: 'GET',
+	headers: {
+		accept: 'application/json',
+		Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1N2ZlMTM5YzI5YWFjMWIzMDM2ZjkxMDkzZjFhYWM5NCIsInN1YiI6IjY0YmViYjU4Yjg2NWViMDEzOTlkNjljOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.mLGaPcIJrhSibQsjjiSAPl3F94QKk1OVEhBHsvwQRlY'
+	}
 };
 
-export const fetchMovies = async (option, extra) => {
-    try {
-        const res = await fetch(createUrl(option, extra));
-        const data = await res.json();
-        return data.items;
-    } catch (error) {
-        console.log(error.response);
-    }
+export const fetch100TopMovies = async () => {
+	const movies = [];
+
+	for (let i = 1; i <= 5; i++)
+		movies.push((await fetch(`https://api.themoviedb.org/3/movie/top_rated?page=${i}`, options)
+			.then(response => response.json())).results);
+
+	return movies.flat();
 }
 
-export const fetchSeriesByTitle = async (title) => {
-    try {
-        const res = await fetch(createUrl('SearchSeries', title));
-        const data = await res.json();
-        return data.items;
-    } catch (error) {
-        console.log(error.response);
-    }
+export const fetchPopularMovies = async () => {
+	const movies = [];
+
+	for (let i = 1; i <= 5; i++)
+		movies.push((await fetch(`https://api.themoviedb.org/3/movie/popular?page=${i}`, options)
+			.then(response => response.json())).results);
+
+	return movies.flat();
+}
+
+export const fetch100TopSeries = async () => {
+	const series = [];
+
+	for (let i = 1; i <= 5; i++)
+		series.push((await fetch(`https://api.themoviedb.org/3/tv/top_rated?page=${i}`, options)
+			.then(response => response.json())).results);
+	
+	return series.flat();
 };
 
-export const fetchSeries = async () => {
-    try {
-        const res = await fetch(createUrl('Top250TVs'));
-        const data = await res.json();
-        return data.items;
-    } catch (error) {
-        console.log(error.response);
-    }
+export const fetchPopularSeries = async () => {
+	const series = [];
+
+	for (let i = 1; i <= 5; i++)
+		series.push((await fetch(`https://api.themoviedb.org/3/tv/popular?page=${i}`, options)
+			.then(response => response.json())).results);
+
+	return series.flat();
 };
