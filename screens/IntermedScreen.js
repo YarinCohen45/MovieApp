@@ -80,13 +80,13 @@ const styles = StyleSheet.create({
 		resizeMode: 'cover', // or 'stretch' for different scaling options
 	},
 	Button: {
-		backgroundColor: '#deb889',
+		backgroundColor: '#8EBBFF',
 		height: 80,
 		width: 80,
 		borderRadius: 25,
 		alignItems: "center",
 		justifyContent: "center",
-		shadowColor: '#deb887',
+		shadowColor: '#8EBBFF',
 		shadowOffset: {
 			width: 0,
 			height: 2,
@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
 		borderColor: 'black',
 		padding: 20,
 		textAlign: 'center',
-		backgroundColor: '#deb887'
+		backgroundColor: '#8EBBF'
 	},
 	frame2: {
 		borderWidth: 2,
